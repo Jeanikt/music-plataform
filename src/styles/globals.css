@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --background: 215 20% 8%;
-  --foreground: 210 20% 98%;
-  
-  --card: 215 25% 11%;
-  --card-foreground: 210 20% 98%;
-  
-  --popover: 215 25% 11%;
-  --popover-foreground: 210 20% 98%;
-  
+  --background: 174 33% 11%;
+  --foreground: 0 0% 98%;
+
+  --card: 174 30% 15%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 174 30% 15%;
+  --popover-foreground: 0 0% 98%;
+
   --primary: 174 59% 41%;
-  --primary-foreground: 210 20% 98%;
-  
-  --secondary: 215 25% 19%;
-  --secondary-foreground: 210 20% 98%;
-  
-  --muted: 215 25% 19%;
-  --muted-foreground: 217.9 10.6% 64.9%;
-  
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 174 25% 19%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 174 25% 19%;
+  --muted-foreground: 174 10% 70%;
+
   --accent: 174 59% 41%;
-  --accent-foreground: 210 20% 98%;
-  
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 20% 98%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
 
   --success: 142 76% 36%;
-  --success-foreground: 210 20% 98%;
+  --success-foreground: 0 0% 98%;
 
-  --border: 215 25% 19%;
-  --input: 215 25% 19%;
+  --border: 174 25% 19%;
+  --input: 174 25% 19%;
   --ring: 174 59% 41%;
 
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: 215 20% 8%;
-  --foreground: 210 20% 98%;
+  --background: 174 33% 11%;
+  --foreground: 0 0% 98%;
 }
 
 @layer base {
@@ -58,6 +58,19 @@
 
 .glass-card {
   @apply bg-card/80 backdrop-blur-lg border border-border/50;
+}
+
+/* Custom Gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(174 59% 41%), hsl(174 59% 31%));
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, hsl(174 25% 19%), hsl(174 25% 9%));
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, hsl(174 59% 41%), hsl(142 76% 36%));
 }
 
 /* Custom Animations */
@@ -97,5 +110,20 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted/80;
+}
+
+/* Container Utilities */
+.container-center {
+  @apply container mx-auto px-4 max-w-7xl;
+}
+
+/* Layout Utilities */
+.layout-grid {
+  @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
 }
 
