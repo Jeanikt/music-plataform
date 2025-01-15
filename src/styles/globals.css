@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 215 20% 8%;
+  --foreground: 210 20% 98%;
+  
+  --card: 215 25% 11%;
+  --card-foreground: 210 20% 98%;
+  
+  --popover: 215 25% 11%;
+  --popover-foreground: 210 20% 98%;
+  
+  --primary: 174 59% 41%;
+  --primary-foreground: 210 20% 98%;
+  
+  --secondary: 215 25% 19%;
+  --secondary-foreground: 210 20% 98%;
+  
+  --muted: 215 25% 19%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+  
+  --accent: 174 59% 41%;
+  --accent-foreground: 210 20% 98%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 20% 98%;
+
+  --success: 142 76% 36%;
+  --success-foreground: 210 20% 98%;
+
+  --border: 215 25% 19%;
+  --input: 215 25% 19%;
+  --ring: 174 59% 41%;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 215 20% 8%;
+  --foreground: 210 20% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Glassmorphism Effects */
+.glass {
+  @apply bg-background/80 backdrop-blur-lg border border-border/50;
+}
+
+.glass-card {
+  @apply bg-card/80 backdrop-blur-lg border border-border/50;
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted/80;
+}
+
